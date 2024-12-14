@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Resume Builder</h1>
+        <div class="form-container">
+            <h2>Enter Your Details</h2>
+            <form id="resumeForm">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education</legend>
+                    <input type="text" id="school" name="school" placeholder="School/University Name" required>
+                    <input type="text" id="grade" name="grade" placeholder="Grade/Class" required>
+                    <input type="text" id="program" name="program" placeholder="Program" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <div id="skillsContainer">
+                        <input type="text" name="skills[]" placeholder="Skill" required>
+                    </div>
+                    <button type="button" id="addSkill">Add Skill</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Work Experience (Optional)</legend>
+                    <div id="experienceContainer">
+                        <div class="experience-entry">
+                            <input type="text" name="jobTitle[]" placeholder="Job Title">
+                            <input type="text" name="company[]" placeholder="Company Name">
+                            <input type="text" name="workPeriod[]" placeholder="Work Period">
+                            <textarea name="responsibilities[]" placeholder="Responsibilities"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" id="addExperience">Add Experience</button>
+                </fieldset>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>
+
+        <div class="resume-container">
+            <h2>Your Resume</h2>
+            <div id="resumeOutput">
+                <!-- Dynamic resume content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
